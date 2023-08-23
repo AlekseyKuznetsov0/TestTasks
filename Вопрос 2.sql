@@ -15,7 +15,7 @@ full join CategoriesTable as ctg on pct.id_category = ctg.id
 
 --Вариант, при котором получаем все пары "Имя продукта - Имя категории", включая продукты без категорий и игнорируя пустые категории.
 select 
-        isnull(prd.name, '') as product_name
+        prd.name as product_name
        ,isnull(ctg.name, '') as category_name
 from ProductsTable as prd
 left join PrdCtgTable as pct on prd.id = pct.id_product
